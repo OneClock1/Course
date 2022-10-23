@@ -1,12 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
-
 #include <QMainWindow>
 #include <QTcpSocket>
 #include <QTime>
 #include <QMessageBox>
-
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -34,8 +31,6 @@ private slots:
 
 private:
 
-    //QTime time;
-
     QString username;
     Ui::MainWindow *ui;
     QTcpSocket *socket;
@@ -47,7 +42,6 @@ public slots:
     void slotReadyUsername(QString username);
     void slotReadyRead();
     void slotDisconected();
-
 
 };
 #endif // MAINWINDOW_H

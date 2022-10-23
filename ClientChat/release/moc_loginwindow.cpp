@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'loginwindow.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.3.1)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.3.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -13,7 +13,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'loginwindow.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.3.1. It"
+#error "This file was generated using the moc from 6.3.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -22,23 +22,31 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_LoginWindow_t {
-    const uint offsetsAndSize[12];
-    char stringdata0[77];
+    uint offsetsAndSizes[12];
+    char stringdata0[12];
+    char stringdata1[7];
+    char stringdata2[1];
+    char stringdata3[9];
+    char stringdata4[22];
+    char stringdata5[26];
 };
 #define QT_MOC_LITERAL(ofs, len) \
-    uint(offsetof(qt_meta_stringdata_LoginWindow_t, stringdata0) + ofs), len 
+    uint(sizeof(qt_meta_stringdata_LoginWindow_t::offsetsAndSizes) + ofs), len 
 static const qt_meta_stringdata_LoginWindow_t qt_meta_stringdata_LoginWindow = {
     {
-QT_MOC_LITERAL(0, 11), // "LoginWindow"
-QT_MOC_LITERAL(12, 6), // "signal"
-QT_MOC_LITERAL(19, 0), // ""
-QT_MOC_LITERAL(20, 8), // "username"
-QT_MOC_LITERAL(29, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(51, 25) // "on_lineEdit_returnPressed"
-
+        QT_MOC_LITERAL(0, 11),  // "LoginWindow"
+        QT_MOC_LITERAL(12, 6),  // "signal"
+        QT_MOC_LITERAL(19, 0),  // ""
+        QT_MOC_LITERAL(20, 8),  // "username"
+        QT_MOC_LITERAL(29, 21),  // "on_pushButton_clicked"
+        QT_MOC_LITERAL(51, 25)   // "on_lineEdit_returnPressed"
     },
-    "LoginWindow\0signal\0\0username\0"
-    "on_pushButton_clicked\0on_lineEdit_returnPressed"
+    "LoginWindow",
+    "signal",
+    "",
+    "username",
+    "on_pushButton_clicked",
+    "on_lineEdit_returnPressed"
 };
 #undef QT_MOC_LITERAL
 
@@ -87,7 +95,7 @@ void LoginWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         int *result = reinterpret_cast<int *>(_a[0]);
         {
             using _t = void (LoginWindow::*)(QString );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&LoginWindow::signal)) {
+            if (_t _q_method = &LoginWindow::signal; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
                 return;
             }
@@ -97,7 +105,7 @@ void LoginWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
 
 const QMetaObject LoginWindow::staticMetaObject = { {
     QMetaObject::SuperData::link<QMainWindow::staticMetaObject>(),
-    qt_meta_stringdata_LoginWindow.offsetsAndSize,
+    qt_meta_stringdata_LoginWindow.offsetsAndSizes,
     qt_meta_data_LoginWindow,
     qt_static_metacall,
     nullptr,

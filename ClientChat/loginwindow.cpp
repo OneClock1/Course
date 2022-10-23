@@ -9,7 +9,6 @@ LoginWindow::LoginWindow(QWidget *parent) :
     ui->setupUi(this);
     mainWindow = new MainWindow;
     connect(this, &LoginWindow::signal, mainWindow, &MainWindow::slotReadyUsername);
-
 }
 
 LoginWindow::~LoginWindow()
@@ -19,7 +18,6 @@ LoginWindow::~LoginWindow()
 
 void LoginWindow::on_pushButton_clicked()
 {
-
     username = ui->lineEdit->text();
 
     if(checkUsername(username)&& username != "")
@@ -27,7 +25,6 @@ void LoginWindow::on_pushButton_clicked()
         hide();
         mainWindow->show();
         emit signal(username);
-
 
     }
     else
@@ -50,10 +47,7 @@ bool LoginWindow::checkUsername(QString name)
         if(name[i] != '/' && name[i] != ' ' && name[i] != '.' && name.length() >= 3)
         {
             return true;
-
         }
     }
     return false;
-
 }
-

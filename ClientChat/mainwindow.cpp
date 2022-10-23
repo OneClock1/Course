@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -12,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(socket, SIGNAL(disconnected()), this, SLOT(slotDisconected()));
 
     nextBlockSize = 0;
-    socket->connectToHost("51.124.206.116", 23235);
+    socket->connectToHost("54.159.207.81", 23235);
 
     if(!socket->waitForConnected(1000))
     {
@@ -20,9 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
                                  tr("Попробуйте перезапустити додаток.\n"
                                     "\nЯкщо вище вказане не вирішить проблему будь ласка, звернітся за допомогою до розробника через Email: maltsevcorp@gmail.com ."), QMessageBox::Ok);
 
-
     }
-
 
 }
 

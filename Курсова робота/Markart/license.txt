@@ -1,0 +1,31 @@
+Copyright (C) 2022 Maltsev Anatoly
+
+This program is free software. You can distribute
+
+and / or make changes in accordance with the terms of the General Public
+
+GNU licenses as published by the Foundation
+
+Free Software, Version 2, or (your own)
+
+discretion) of any later version.
+
+
+This program is distributed in the hope that it will be
+
+useful, but WITHOUT ANY IMPLIED WARRANTY
+
+COMMERCIAL FITNESS OR LIABILITY TO ANY CERTAIN
+
+APPLICATION. Refer to the GNU Universal Public License for
+
+details.
+
+
+You should have received a copy of the GNU General Public License along with this one
+
+program. If you did not receive a copy of your license, please write to
+
+Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+
+MA 02111-1307, U

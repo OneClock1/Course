@@ -1,26 +1,49 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'loginwindow.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.3.2)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
 #include <memory>
 #include "../loginwindow.h"
-#include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
+
+#if __has_include(<QtCore/qtmochelpers.h>)
+#include <QtCore/qtmochelpers.h>
+#else
+QT_BEGIN_MOC_NAMESPACE
+#endif
+
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'loginwindow.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.3.2. It"
+#error "This file was generated using the moc from 6.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
-QT_BEGIN_MOC_NAMESPACE
+#ifndef Q_CONSTINIT
+#define Q_CONSTINIT
+#endif
+
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
+QT_WARNING_DISABLE_GCC("-Wuseless-cast")
+namespace {
+
+#ifdef QT_MOC_HAS_STRINGDATA
+struct qt_meta_stringdata_LoginWindow_t {};
+static constexpr auto qt_meta_stringdata_LoginWindow = QtMocHelpers::stringData(
+    "LoginWindow",
+    "signal",
+    "",
+    "username",
+    "on_pushButton_clicked",
+    "on_lineEdit_returnPressed"
+);
+#else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_LoginWindow_t {
     uint offsetsAndSizes[12];
     char stringdata0[12];
@@ -32,7 +55,7 @@ struct qt_meta_stringdata_LoginWindow_t {
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_LoginWindow_t::offsetsAndSizes) + ofs), len 
-static const qt_meta_stringdata_LoginWindow_t qt_meta_stringdata_LoginWindow = {
+Q_CONSTINIT static const qt_meta_stringdata_LoginWindow_t qt_meta_stringdata_LoginWindow = {
     {
         QT_MOC_LITERAL(0, 11),  // "LoginWindow"
         QT_MOC_LITERAL(12, 6),  // "signal"
@@ -49,11 +72,13 @@ static const qt_meta_stringdata_LoginWindow_t qt_meta_stringdata_LoginWindow = {
     "on_lineEdit_returnPressed"
 };
 #undef QT_MOC_LITERAL
+#endif // !QT_MOC_HAS_STRING_DATA
+} // unnamed namespace
 
-static const uint qt_meta_data_LoginWindow[] = {
+Q_CONSTINIT static const uint qt_meta_data_LoginWindow[] = {
 
  // content:
-      10,       // revision
+      11,       // revision
        0,       // classname
        0,    0, // classinfo
        3,   14, // methods
@@ -80,6 +105,26 @@ static const uint qt_meta_data_LoginWindow[] = {
        0        // eod
 };
 
+Q_CONSTINIT const QMetaObject LoginWindow::staticMetaObject = { {
+    QMetaObject::SuperData::link<QMainWindow::staticMetaObject>(),
+    qt_meta_stringdata_LoginWindow.offsetsAndSizes,
+    qt_meta_data_LoginWindow,
+    qt_static_metacall,
+    nullptr,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_LoginWindow_t,
+        // Q_OBJECT / Q_GADGET
+        QtPrivate::TypeAndForceComplete<LoginWindow, std::true_type>,
+        // method 'signal'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QString, std::false_type>,
+        // method 'on_pushButton_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_lineEdit_returnPressed'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>
+    >,
+    nullptr
+} };
+
 void LoginWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
@@ -102,22 +147,6 @@ void LoginWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         }
     }
 }
-
-const QMetaObject LoginWindow::staticMetaObject = { {
-    QMetaObject::SuperData::link<QMainWindow::staticMetaObject>(),
-    qt_meta_stringdata_LoginWindow.offsetsAndSizes,
-    qt_meta_data_LoginWindow,
-    qt_static_metacall,
-    nullptr,
-qt_incomplete_metaTypeArray<qt_meta_stringdata_LoginWindow_t
-, QtPrivate::TypeAndForceComplete<LoginWindow, std::true_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
-
-
->,
-    nullptr
-} };
-
 
 const QMetaObject *LoginWindow::metaObject() const
 {
@@ -156,4 +185,3 @@ void LoginWindow::signal(QString _t1)
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 QT_WARNING_POP
-QT_END_MOC_NAMESPACE

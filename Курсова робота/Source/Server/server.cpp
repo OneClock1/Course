@@ -5,11 +5,11 @@ Server::Server()
 {
     if(this->listen(QHostAddress::AnyIPv4, 23235))
     {
-        qDebug() << "start.";
+        qDebug() << "Start.";
     }
     else
     {
-        qDebug() << "error.";
+        qDebug() << "Error.";
     }
     nextBlockSize = 0;
 
@@ -23,19 +23,19 @@ void Server::incomingConnection(qintptr socketDescriptor)
     connect(socket, SIGNAL(readyRead()), this, SLOT(slotReadyRead()));
     connect(socket, SIGNAL(disconnected()), this, SLOT(slotDisconected()));
 
-    Sockets.push_back(socket);
-    qDebug()<<"client connected." << socketDescriptor;
+    socketVector.push_back(socket);
+    qDebug()<<"Client connected." << socketDescriptor;
 
-    SendToClient("Ви успішно підключились.");
+    sendToClient("Ви успішно підключились.");
 }
 void Server::slotDisconected()
 {
-    qDebug()<<&socket<<" client disconected.";
-    for(int i = 0; i < Sockets.size(); i++)
+    qDebug()<<&socket<<" Client disconected.";
+    for(int i = 0; i < socketVector.size(); i++)
     {
-        if(socket == Sockets[i])
+        if(socket == socketVector[i])
         {
-            Sockets.removeAt(i);
+            socketVector.removeAt(i);
             socket->deleteLater();
             break;
         }
@@ -77,7 +77,7 @@ void Server::slotReadyRead()
             QTime time;
             in >> time >> str;
             nextBlockSize = 0;
-            SendToClients(str);
+            sendToClients(str);
             break;
         }
     }
@@ -87,34 +87,34 @@ void Server::slotReadyRead()
     }
 }
 
-void Server::SendToClient(QString str)
+void Server::sendToClient(QString str)
 {
 
-    Data.clear();
+    data.clear();
 
-    QDataStream out(&Data, QIODevice::WriteOnly);
+    QDataStream out(&data, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_6_3);
     out << quint16(0) << QTime::currentTime() << str;
     out.device()->seek(0);
-    out << quint16(Data.size() - sizeof(quint16));
-    socket->write(Data);
+    out << quint16(data.size() - sizeof(quint16));
+    socket->write(data);
 
 }
 
-void Server::SendToClients(QString str)
+void Server::sendToClients(QString str)
 {
 
-    Data.clear();
+    data.clear();
 
-    QDataStream out(&Data, QIODevice::WriteOnly);
+    QDataStream out(&data, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_6_3);
     out << quint16(0) << QTime::currentTime() << str;
     out.device()->seek(0);
-    out << quint16(Data.size() - sizeof(quint16));
+    out << quint16(data.size() - sizeof(quint16));
 
-    for(int i = 0; i < Sockets.size(); i++)
+    for(int i = 0; i < socketVector.size(); i++)
     {
-         Sockets[i]->write(Data);
+         socketVector[i]->write(data);
 
     }
 }

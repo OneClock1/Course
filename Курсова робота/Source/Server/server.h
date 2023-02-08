@@ -12,16 +12,16 @@ class Server : public QTcpServer
 
 public:
     Server();
-    QTcpSocket *socket;
 
 private:
-    QVector <QTcpSocket*> Sockets;
-    QByteArray Data;
+    QTcpSocket *socket;
+    QVector <QTcpSocket*> socketVector;
+    QByteArray data;
     quint16 nextBlockSize;
 
 
-    void SendToClients(QString str);
-    void SendToClient(QString str);
+    void sendToClients(QString str);
+    void sendToClient(QString str);
 
 
 public slots:
@@ -29,5 +29,6 @@ public slots:
 
     void slotReadyRead();
     void slotDisconected();
+
 };
 #endif // SERVER_H

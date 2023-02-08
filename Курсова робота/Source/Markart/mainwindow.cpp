@@ -7,11 +7,11 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     socket = new QTcpSocket(this);
-    connect(socket, SIGNAL(readyRead()), this, SLOT(slotReadyRead()));
-    connect(socket, SIGNAL(disconnected()), this, SLOT(slotDisconected()));
+    connect(socket, &QTcpSocket::readyRead, this, &MainWindow::slotReadyRead);
+    connect(socket, &QTcpSocket::disconnected, this, &MainWindow::slotDisconected);
 
     nextBlockSize = 0;
-    socket->connectToHost("44.212.185.182", 23235);
+    socket->connectToHost("192.168.0.111", 23235);
 
     if(!socket->waitForConnected(1000))
     {
@@ -28,16 +28,16 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::SendToServer(QString str)
+void MainWindow::sendToServer(QString str)
 {
-    Data.clear();
-    QDataStream out(&Data, QIODevice::WriteOnly);
+    data.clear();
+    QDataStream out(&data, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_6_3);
     str = username +": "+ str;
     out << quint16(0) << QTime::currentTime() << str;
     out.device()->seek(0);
-    out << quint16(Data.size() - sizeof(quint16));
-    socket->write(Data);
+    out << quint16(data.size() - sizeof(quint16));
+    socket->write(data);
     ui->lineEdit->clear();
 }
 
@@ -88,7 +88,7 @@ void MainWindow::on_pushButton_2_clicked()
     if(ui->lineEdit->text() != " " && ui->lineEdit->text() != "")
     {
 
-        SendToServer(ui->lineEdit->text());
+        sendToServer(ui->lineEdit->text());
     }
 }
 
@@ -96,10 +96,6 @@ void MainWindow::on_lineEdit_returnPressed()
 {
     on_pushButton_2_clicked();
 }
-
-
-
-
 
 void MainWindow::on_action_triggered()
 {

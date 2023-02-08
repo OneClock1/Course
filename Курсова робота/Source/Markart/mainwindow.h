@@ -34,9 +34,9 @@ private:
     QString username;
     Ui::MainWindow *ui;
     QTcpSocket *socket;
-    QByteArray Data;
+    QByteArray data;
     quint16 nextBlockSize;
-    void SendToServer(QString str);
+    void sendToServer(QString str);
 
 public slots:
     void slotReadyUsername(QString username);
